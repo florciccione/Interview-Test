@@ -1,55 +1,61 @@
-import React from 'react';
+import React from "react";
 
 //CSS
-import '../styles/Today.css';
+import "../styles/Today.css";
 
 //Material
-import CardContent from '@mui/material/CardContent';
-import Grid from '@mui/material/Grid';
-import Typography from '@mui/material/Typography';
+import CardContent from "@mui/material/CardContent";
+import Grid from "@mui/material/Grid";
+import Typography from "@mui/material/Typography";
 
 function Today({ current }) {
-    return (
-        <CardContent classes={{ root: "today" }}>
-
-            <Grid container direction="column" className="containerWeather" spacing={2}>
-                {current.weather ? (
-                    <div className="imageWeather" >
-                        <Grid classes={{ root: "icon" }} item >
-                            <img
-                                src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`}
-                                width="120"
-                                height="120"
-                                alt="weather icon"
-                            />
-                        </Grid>
-                        <Grid item>
-                            <Typography classes={{ h5: "description" }} variant="h5">
-                                {current.weather[0].main}
-                            </Typography>
-                        </Grid>
-                    </div>
-                ) : null}
+  return (
+    <CardContent classes={{ root: "today" }}>
+      <Grid
+        container
+        direction="column"
+        className="containerWeather"
+        spacing={2}
+      >
+        {current.weather ? (
+          <div className="imageWeather">
+            <Grid classes={{ root: "icon" }} item>
+              <img
+                src={`http://openweathermap.org/img/wn/${current.weather[0].icon}@2x.png`}
+                width="120"
+                height="120"
+                alt="weather icon"
+              />
             </Grid>
-            {current.main ? (
-                <Grid container className="containerTemperature" spacing={2}>
-                    <Grid item container className="temperature" spacing={2}>
-                        <Grid item >
-                            <Typography variant="h2" classes={{ h2: "currentTemp" }}>
-                                {`${current.main.temp.toFixed(1)}º`}
-                            </Typography>
-                            <Typography classes={{ h6: "feelsLike" }} variant="h6">
-                                {`Feels like:  ${current.main.feels_like.toFixed(1)}º`}
-                            </Typography>
-                            <Typography classes={{ subtitle2: "humidity" }} variant="subtitle2">
-                                {`Humidity: ${current.main.humidity} %`}
-                            </Typography>
-                        </Grid>
-                    </Grid>
-                </Grid>
-            ) : null}
-
-        </CardContent>
-    )
+            <Grid item>
+              <Typography classes={{ h5: "description" }} variant="h5">
+                {current.weather[0].main}
+              </Typography>
+            </Grid>
+          </div>
+        ) : null}
+      </Grid>
+      {current.main ? (
+        <Grid container className="containerTemperature" spacing={2}>
+          <Grid item container className="temperature" spacing={2}>
+            <Grid item>
+              <Typography variant="h2" classes={{ h2: "currentTemp" }}>
+                {`${current.main.temp.toFixed(1)}º`}
+              </Typography>
+              <Typography classes={{ h6: "feelsLike" }} variant="h6">
+                {`Feels like:  ${current.main.feels_like.toFixed(1)}º`}
+              </Typography>
+              <Typography
+                classes={{ subtitle2: "humidity" }}
+                variant="subtitle2"
+              >
+                {`Humidity: ${current.main.humidity} %`}
+              </Typography>
+            </Grid>
+          </Grid>
+        </Grid>
+      ) : null}
+    </CardContent>
+  );
 }
-export default Today
+export default Today;
