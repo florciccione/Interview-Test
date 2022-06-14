@@ -1,12 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-import axios from "axios";
 
 export const weatherSlice = createSlice({
     name: "weather",
     initialState: {
         city: "",
         list: [],
-        current: {}
+        current: {},
+        notFound: false,
+        error: false
     },
     reducers: {
         setCity: (state, action) => {
@@ -17,30 +18,30 @@ export const weatherSlice = createSlice({
         },
         setWeatherList: (state, action) =>  {
             state.list = action.payload;
-        }
+        },
+        setCityNotFound: (state) => {
+            state.notFound = true;
+        },
+        setCityError: (state) => {
+            state.error = true;
+        },
+        setClearCityNotFound: (state) => {
+            state.notFound = false;
+        },
+        setClearCityError: (state) => {
+            state.error = false;
+        },
     },
 });
 
-export const { setCurrentWeather, setWeatherList, setCity } = weatherSlice.actions;
+export const { 
+    setCurrentWeather, 
+    setWeatherList, 
+    setCityNotFound, 
+    setClearCityNotFound, 
+    setCityError, 
+    setClearCityError, 
+    setCity 
+} = weatherSlice.actions;
 
 export default weatherSlice.reducer;
-
-export const fetchWeather = (city, apiKey) => (dispatch) => {
-    axios
-    .get(`http://api.openweathermap.org/geo/1.0/direct?q=${city}&limit=3&appid=${apiKey}`)
-    .then((response) => {
-        dispatch(setCity(response.data[0].name));
-        axios
-            .get(`https://api.openweathermap.org/data/2.5/weather?lat=${response.data[0].lat}&lon=${response.data[0].lon}&appid=${apiKey}&units=metric`)
-            .then((data) => {
-                dispatch(setCurrentWeather(data.data));
-            }).catch((error) => console.log(error));  
-        axios
-            .get(`http://api.openweathermap.org/data/2.5/forecast?lat=${response.data[0].lat}&lon=${response.data[0].lon}&appid=${apiKey}&units=metric`)
-            .then((data) => {
-                dispatch(setWeatherList(data.data.list));
-            }).catch((error) => console.log(error));  
-            
-    })
-    .catch((error) => console.log(error));
-}

@@ -6,13 +6,12 @@ import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
 
 //CSS
-import './NextDay.css';
+import './styles/NextDay.css';
 
 //Components
 import Hour from "./Hour";
 
 function NextDay({day}) {
-  console.log("day",day)
   return (
     <CardContent classes={{ root: "next"}}>
       <Typography classes={{ h6: "dayTitle"}} variant="h6">

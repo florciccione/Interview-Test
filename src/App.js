@@ -1,18 +1,16 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import './App.css';
-import HomePage from './pages/HomePage';
+import HomePage from './components/HomePage';
+import SearchBar from './components/SearchBar';
 import store from "./store"
 
-const App = () => {
-
+function App() {
   return (
-    <div className="App">
-      <Provider store={store}>
-        <HomePage />
-      </Provider>
-    </div>
+    <Provider store={store}>
+      <SearchBar />
+      <HomePage />
+    </Provider>
   );
 }
 
