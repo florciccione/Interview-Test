@@ -1,0 +1,30 @@
+  .navbar{
+    padding: 32px;
+    display: flex;
+    justify-content: flex-start;
+  }
+  .navbar_search{
+    display: flex;
+    margin: 0 auto;
+    align-items: center;
+  }
+  .searchInput{
+    border: 0.5px solid #d6d6d6;
+    border-radius: 5px;
+    padding: 8px;
+    margin-right: 16px;
+    min-width: 450px;
+  }
+  .searchBtn {
+    width: 120px;
+    border-radius: 25px;
+    color: rgb(255, 255, 255);
+    font-size: 14PX;
+    font-weight: 500;
+    padding: 7px;
+    background-color: black;
+    cursor: pointer;
+  }
+  .searchBtn:active, .searchBtn:link, .searchBtn:visited {
+    text-decoration: none;
+  }

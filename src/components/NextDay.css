@@ -1,0 +1,11 @@
+.next {
+    margin: 32px 0px;
+    border-radius: 8px;
+    -webkit-box-shadow: 5px 0px 30px 1px rgba(167,178,204,1);
+    -moz-box-shadow: 5px 0px 30px 1px rgba(167,178,204,1);
+    box-shadow: 5px 0px 30px 1px rgba(167,178,204,1);
+}  
+.dayTitle {
+    margin-bottom: 16px;
+}
+

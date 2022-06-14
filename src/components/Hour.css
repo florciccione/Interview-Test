@@ -1,0 +1,16 @@
+.hours {
+    min-height: 54px;
+    align-items: center;
+  }
+.text {
+    text-align: center;
+}
+.temperature {
+    display: flex;
+    align-items: baseline;
+    justify-content: center;
+}
+.icon {
+    display: flex;
+    padding: 0;
+}

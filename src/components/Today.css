@@ -1,0 +1,17 @@
+.today {
+    display: flex;
+    margin: 32px 0px;
+    border-radius: 8px;
+    color: white;
+    background-color: rgb(121, 171, 254);
+  }
+  .imageWeather {
+   width: 40%;
+   padding: 8px 24px;
+  }
+  .currentTemp {
+    opacity: 0.5;
+  }
+  .humidity {
+    padding-top: 12px;
+  }
