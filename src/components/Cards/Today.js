@@ -1,7 +1,7 @@
 import React from 'react';
 
 //CSS
-import './styles/Today.css';
+import '../styles/Today.css';
 
 //Material
 import CardContent from '@mui/material/CardContent';

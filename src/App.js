@@ -1,7 +1,7 @@
 import React from 'react';
 import { Provider } from 'react-redux';
 
-import HomePage from './components/HomePage';
+import WeatherPage from './components/WeatherPage';
 import SearchBar from './components/SearchBar';
 import store from "./store"
 
@@ -9,7 +9,7 @@ function App() {
   return (
     <Provider store={store}>
       <SearchBar />
-      <HomePage />
+      <WeatherPage />
     </Provider>
   );
 }

@@ -11,12 +11,12 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 // Components
-import Today from "./Today";
-import NextDay from "./NextDay";
+import Today from "./Cards/Today";
+import NextDay from "./Cards/NextDay";
 import CityError from "./CityError";
 import CityNotFound from "./CityNotFound";
 
-function HomePage() {
+function WeatherPage() {
   const { list: cityWeather, city: cityName, current, error, notFound } = useSelector(state => state.weather);
 
   const listPerDay = useMemo(() => {
@@ -58,4 +58,4 @@ function HomePage() {
   );
 };
 
-export default HomePage;
+export default WeatherPage;

@@ -6,7 +6,7 @@ import Grid from '@mui/material/Grid';
 import Typography from '@mui/material/Typography';
 
 //CSS
-import './styles/Hour.css';
+import '../styles/Hour.css';
 
 function Hour({hour}) {
   return (

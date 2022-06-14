@@ -6,7 +6,7 @@ import Typography from '@mui/material/Typography';
 import CardContent from '@mui/material/CardContent';
 
 //CSS
-import './styles/NextDay.css';
+import '../styles/NextDay.css';
 
 //Components
 import Hour from "./Hour";
